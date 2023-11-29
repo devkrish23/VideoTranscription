@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>File Uploaded</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+    <noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css') }}"></noscript>
+    <style>
+        /* Define styles for centering the section */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure the page takes up the full viewport height */
+            margin: 0; /* Remove default margin to prevent unwanted spacing */
+        }
+        section {
+            text-align: center; /* Center text within the section */
+            border: 1px solid #ccc; /* Optional: Add a border for visibility */
+            padding: 20px; /* Optional: Add padding for spacing */
+            margin-top: -10vh;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1>Success!</h1>
+            <p>File was successfully uploaded for video transcribing</p>
+        </header>
+
+        <!-- File Upload Section -->
+        <section id="file-upload" class="alt">
+            <h2>Extract audio for transcribing</h2>
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col">
+                    <form action="/convert_audio" method="POST">
+                        <input type="submit" value="Convert to Audio" class="btn">
+                    </form>
+                </div>
+                <div class="col">
+                    <form action="/go_home" method="POST">
+                        <input type="submit" value="Re-Upload File" class="btn">
+                    </form>
+                </div>
+                <div class="col">
+                    <form action="/go_home" method="POST">
+                        <input type="submit" value="Exit" class="btn">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+</html>
